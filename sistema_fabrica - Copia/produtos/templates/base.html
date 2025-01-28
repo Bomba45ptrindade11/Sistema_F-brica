@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang= "pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>{% block title %} Controle de Estoque{% endblock %}</title>
+         {% load static %} 
+            <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet"> 
+    </head>
+    <body>
+        <header>
+            <header class="bg-primary text-white p-3"> 
+            <div class="container"> 
+            <h1>Controle de Estoque</h1>
+            <nav>
+                <a href="{% url 'listar_produtos' %}">Listar Produtos</a>
+                <a href="{% url 'adicionar_produto' %}">Adicionar Produto</a>
+            </nav>
+        </header>
+        <main>
+            <main class="container mt-4"> 
+            {% block content %}
+            <!-- Conteúdo da página-->
+             {% endblock %}
+        </main>
+        <footer>
+            <footer class="bg-light text-center p-3 mt-4">
+            <p>&copy; 2024 Controle de Estoque</p>
+        </footer>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    </body>
+</html>
